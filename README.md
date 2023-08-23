@@ -5,10 +5,10 @@
 
         git clone https://github.com/FernandoGmz2001/GomezAPI
 
-3. Install all dependencies
+2. Install all dependencies
 
         npm install
 
-4. Run the project
+3. Run the project
 
         npm run dev
