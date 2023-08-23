@@ -1,7 +1,14 @@
-# Fernando's Repository
+## Fernando's Repository
+### How to set up this project?
 
-Follow the steps to setup the project!
+1. Clone this repository.
 
-1.- Clone this repo
-2.- npm install 
-3.- npm run dev
+        git clone https://github.com/FernandoGmz2001/GomezAPI
+
+3. Install all dependencies
+
+        npm install
+
+4. Run the project
+
+        npm run dev
