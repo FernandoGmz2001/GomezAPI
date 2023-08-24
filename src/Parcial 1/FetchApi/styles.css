@@ -1,0 +1,9 @@
+.btn__container{
+    display: flex;
+    gap: 10px;
+}
+
+.info__container{
+    display: flex;
+    flex-direction: column;
+}
