@@ -1,10 +1,12 @@
 import "./App.css";
-import FetchApi from "./Parcial 1/FetchApi/FetchApi";
+import FetchParameters from "./Parcial 1/PeticionesConParametros/FetchParameters";
+import FetchApi from "./Parcial 1/PeticionesJs/FetchApi";
 
 function App() {
   return (
     <>
-      <FetchApi />
+      {/* <FetchApi /> */}
+      <FetchParameters/>
     </>
   );
 }

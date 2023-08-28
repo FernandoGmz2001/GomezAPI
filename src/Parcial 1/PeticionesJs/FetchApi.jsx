@@ -72,7 +72,7 @@ const FetchApi = () => {
       <div className="info__container">
         <h1>Fetch API</h1>
         <div>
-          <p> <b>{getFetch.first_name}</b></p>
+        <p><b>{getFetch.first_name}</b></p>
           <img src={getFetch.avatar} alt="" />
         </div>
       </div>
