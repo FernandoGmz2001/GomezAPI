@@ -4,11 +4,15 @@
 1. Clone this repository.
 
         git clone https://github.com/FernandoGmz2001/GomezAPI
+   
+2. Go to the folder
 
-2. Install all dependencies
+        cd GomezAPI
+
+3. Install all dependencies
 
         npm install
 
-3. Run the project
+4. Run the project
 
         npm run dev
