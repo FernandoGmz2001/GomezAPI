@@ -1,13 +1,10 @@
-import { writeFile } from 'fs'
-import {dirname } from 'path'
+import { writeFile } from 'fs';
+import { join, dirname } from 'path';
 
-console.log(import.meta.url);
-console.log(dirname(import.meta.url))
-
-writeFile('hola-mundo.txt','Hola mundo', (err) => {
-  if (err) {
-    console.error(err);
-    return;
-  }
-  console.log('Archivo creado exitosamente.');
+console.log(dirname(import.meta.url));
+writeFile(join(dirname(import.meta.url), 'archivo.txt'), 'Hola mundo', (err) => {
+    if (err) {
+        console.log(err);
+    }
+    console.log('Archivo creado');
 });
