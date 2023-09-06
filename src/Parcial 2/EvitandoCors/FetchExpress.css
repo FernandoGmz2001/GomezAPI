@@ -1,0 +1,12 @@
+.fetch__form{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.fetch__form input{
+    border-radius: 10px;
+    padding: 5px;
+    outline: transparent;
+    border: transparent;
+}
