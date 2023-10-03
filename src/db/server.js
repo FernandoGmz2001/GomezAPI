@@ -5,6 +5,9 @@ import { promisePool } from "./connection.js";
 import bodyParser from "body-parser";
 // import { routes } from './routes/index.js'
 import cors from "cors";
+import basicAuth from 'express-basic-auth'
+import { dirname } from "path";
+
 
 const app = express();
 const port = 8080;
@@ -13,8 +16,13 @@ const accessLogStream = createWriteStream((import.meta.url, "access.log"), {
   flags: "a",
 });
 app.use(express.json());
-app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(basicAuth({
+//     users: { 'admin': 'supersecret' }
+// }))
+
+
 app.listen(port, (req, res) => {
   console.log(req, res);
   console.log(
@@ -58,8 +66,10 @@ app.delete("/alumnos/:id", async (req, res) => {
 
 app.post("/alumnos/new", async (req, res) => {
     const { nombre, apellido_materno, apellido_paterno } = req.body;
+    console.log(req.body)
   try {
     const result = await promisePool.query(`INSERT INTO Alumno VALUES (null,'${nombre}', '${apellido_materno}', '${apellido_paterno}')`)
+    res.sendFile('E:/School/GomezAPI/src/views/CreateForm/index.html')
     res.json(result[0]).status(200);
   } catch (error) {
     res.status(500).send(error.message);

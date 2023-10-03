@@ -3,8 +3,8 @@ import "./App.css";
 // import ServerTest from "./Parcial 1/ServidorHttps/ServerTest";
 // import FetchApi from "./Parcial 1/PeticionesJs/FetchApi";
 // import FetchExpress from "./Parcial 1/Express/FetchExpress"; 
-// import CreateForm from "./views/CreateForm/CreateForm.jsx";
-import ShowInformation from "./views/ShowInformation/ShowInformation";
+import CreateForm from "./views/CreateForm/CreateForm.jsx";
+// import ShowInformation from "./views/ShowInformation/ShowInformation";
 
 function App() {
   return (
@@ -14,8 +14,8 @@ function App() {
       {/* <CustomApp/> */}
       {/* <ServerTest/> */}
       {/* <FetchExpress/> */}
-      {/* <CreateForm/> */}
-      <ShowInformation/>
+      <CreateForm/>
+      {/* <ShowInformation/> */}
     </>
   );
 }
