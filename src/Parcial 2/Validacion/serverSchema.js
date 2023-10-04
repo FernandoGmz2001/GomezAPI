@@ -59,13 +59,10 @@ app.delete("/alumnos/:id", async (req, res) => {
 
 app.post(
   "/alumnos/new",
-  checkSchema({
-    nombre: { isLength: { options: { min: 3} } },
-  }),
+  checkSchema({ nombre: { isLength: { min: 7, max: 10 } } }),
   async (req, res) => {
     const { nombre, apellido_materno, apellido_paterno } = req.body;
     const result = validationResult(req);
-    console.log(result);
     if (result.isEmpty()) {
       try {
         const result = await promisePool.query(
@@ -76,7 +73,7 @@ app.post(
         res.status(400).send(error.message);
       }
     } else {
-      res.status(400).json("Ocurrio un error en la solicitud de su formulario");
+      res.json("Ocurrio un error en la solicitud de su formulario").status(400);
     }
   }
 );
