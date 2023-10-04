@@ -18,18 +18,17 @@ function CreateForm() {
     formData.append("apellido_materno", Information.apellido_materno);
     formData.append("apellido_paterno", Information.apellido_paterno);
 
-    axios.post("http://localhost:8080/alumnos/new", formData, {"content-type": "application/x-www-form-urlencoded"});
-    // fetch("http://localhost:8080/alumnos/new", {
-    //   method: "POST",
-    //   headers: {
-    //     'Content-Type': 'application/x-www-form-urlencoded'
-    //   },
-    //   body: JSON.stringify({
-    //     nombre: Information.nombre,
-    //     apellido_materno: Information.apellido_materno,
-    //     apellido_paterno: Information.apellido_paterno
-    //   }),
-    // });
+    fetch("http://localhost:8080/alumnos/new", {
+      method: "POST",
+      headers:{
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        nombre: Information.nombre,
+        apellido_materno: Information.apellido_materno,
+        apellido_paterno: Information.apellido_paterno
+      }),
+    });
     e.preventDefault();
   }
   return (
