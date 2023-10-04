@@ -1,0 +1,82 @@
+.btn{
+    border-radius: 10px;
+    outline: transparent;
+    padding: 10px;
+    border: 1px solid black;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.request__title{
+    text-align: center;
+}
+
+.request__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.--btnBlue{
+    color: var(--blue);
+    border: 1px solid var(--blue);
+    transition: 0.3s all ease-in-out;
+}
+
+.--btnBlue:hover{
+    background-color: var(--blue);
+    color: white;
+    transition: 0.3s all ease-in-out;
+}
+
+.--btnGreen{
+    color: var(--green);
+    transition:0.3s all ease-in-out;
+    border: 1px solid var(--green);
+}
+
+.--btnGreen:hover{
+    background: var(--green);
+    color: white;
+    transition:0.3s all ease-in-out;
+}
+
+.--btnOrange{
+    color: var(--orange);
+    transition:0.3s all ease-in-out;
+    border: 1px solid var(--orange);
+}
+
+.--btnOrange:hover{
+    background: var(--orange);
+    color: white;
+    transition:0.3s all ease-in-out;
+}
+
+.--btnPurple{
+    color: var(--violet);
+    transition:0.3s all ease-in-out;
+    border: 1px solid var(--violet);
+}
+
+.--btnPurple:hover{
+    background: var(--violet);
+    color: white;
+    transition:0.3s all ease-in-out;
+}
+
+.--btnGray{
+    color: var(--gray);
+    border: 1px solid var(--gray);
+    transition:0.3s all ease-in-out;
+
+}
+
+.--btnGray:hover{
+    background: var(--gray);
+    color: white;
+    transition:0.3s all ease-in-out;
+}
+
