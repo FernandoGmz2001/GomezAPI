@@ -10,8 +10,6 @@ const port = 8080;
 
 const schema = joi.object({
     nombre: joi.string().min(3).max(30).required(),
-    apellido_paterno: joi.string().min(3).max(30).required(),
-    apellido_materno: joi.string().min(3).max(30).required()
 })
 
 app.use(express.json());
@@ -64,13 +62,15 @@ app.delete("/alumnos/:id", async (req, res) => {
 
 app.post("/alumnos/new", async (req, res) => {
   const { nombre, apellido_materno, apellido_paterno } = req.body;
-  const value = await schema.validate({ nombre: nombre,apellido_materno: apellido_materno,apellido_paterno: apellido_paterno})
-  
-  if(value.error) return res.status(400).send(value.error.message)
+  schema.validate({ nombre: 'F'});
+  try {
     const result = await promisePool.query(
       `INSERT INTO Alumno VALUES (null,'${nombre}', '${apellido_materno}', '${apellido_paterno}')`
     );
-    res.json(result[0]).status(200)
+    res.json(result[0]).status(200);
+  } catch (error) {
+    res.status(400).send(error.message);
+  }
 });
 
 app.put("/alumnos/:id", async (req, res) => {
