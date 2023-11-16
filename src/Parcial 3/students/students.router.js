@@ -14,7 +14,7 @@ const studentRouter = Router();
  * /alumnos/:
  *    get:
  *      tags:
- *        - estudiantes
+ *        - Estudiantes
  *      summary: Consultar todos los estudiantes
  *      description: Obtiene todos los estudiantes
  *      responses:
@@ -33,7 +33,7 @@ studentRouter.get("/alumnos", async (_, res) => {
  * /alumnos/{id}:
  *    get:
  *      tags:
- *        - estudiantes
+ *        - Estudiantes
  *      summary: Obtener un estudiante por su id
  *      description: Obtiene un estudiante mediante su id
  *      parameters:
