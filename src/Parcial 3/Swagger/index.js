@@ -16,7 +16,7 @@ const swaggerOptions = {
     info: {
       title: "Api de estudiantes",
       version: "1.0.0",
-      description: "Esta es la descripcion de la api de estudiantes",
+      description: "Descripción de la API Empleados. Consulta el README.md para más detalles:\n\n",
     },
     servers: [{ url: "http://localhost:8080" }],
     tags: [
@@ -26,6 +26,12 @@ const swaggerOptions = {
   apis: ["./students/students.router.js"],
 };
 
+fetch('./readme.md')
+  .then(response => response.text())
+  .then(readmeContent => {
+    swaggerOptions.definition.info.description += readmeContent;
+  })
+  .catch(error => console.error('Error al cargar README.md:', error));
 
 const options = {
   explorer: true,
