@@ -41,6 +41,10 @@ app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocs,options));
 app.use(studentRouter);
 app.use(cors());
 
+app.use('/api-docs-json', (req,res) => {
+  res.json(swaggerDocs);
+})
+
 app.listen(port, () => {
   console.log(
     `Servidor express escuchando en el puerto: http://localhost:${port}`
