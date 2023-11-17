@@ -34,10 +34,8 @@ const options = {
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-// app.use('/api-docs', swaggerUi.serve);
 const swaggerDocs = swaggerJSDoc(swaggerOptions);
 app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocs,options));
-// app.get('/api-docs', swaggerUi.setup(swaggerDocument,options));
 app.use(studentRouter);
 app.use(cors());
 

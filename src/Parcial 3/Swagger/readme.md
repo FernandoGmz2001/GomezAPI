@@ -1,3 +1,7 @@
-## Este es el readme de la aplicacion
+# Mi API
 
-# Nos permite consultar al documentacion de la aplicacion
+Esta es una descripción breve de mi API.
+
+## Documentación
+
+La documentación completa de la API se encuentra en [Swagger](/api-docs).

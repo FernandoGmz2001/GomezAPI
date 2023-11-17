@@ -5,6 +5,7 @@ import swaggerUI from "swagger-ui-express";
 import studentRouter from "./students/students.router.js";
 import swaggerJSDoc from "swagger-jsdoc";
 import { SwaggerTheme } from "swagger-themes";
+import Redoc from 'redoc-express'
 
 const app = express();
 const port = 8080;
@@ -26,12 +27,6 @@ const swaggerOptions = {
   apis: ["./students/students.router.js"],
 };
 
-fetch('./readme.md')
-  .then(response => response.text())
-  .then(readmeContent => {
-    swaggerOptions.definition.info.description += readmeContent;
-  })
-  .catch(error => console.error('Error al cargar README.md:', error));
 
 const options = {
   explorer: true,
@@ -40,12 +35,20 @@ const options = {
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-// app.use('/api-docs', swaggerUi.serve);
 const swaggerDocs = swaggerJSDoc(swaggerOptions);
 app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocs,options));
-// app.get('/api-docs', swaggerUi.setup(swaggerDocument,options));
 app.use(studentRouter);
 app.use(cors());
+
+app.use('/api-docs-json', (req,res) => {
+  res.json(swaggerDocs);
+})
+
+app.use('/docs', Redoc({
+  title: 'Documentación de Mi API',
+  specUrl: '/api-docs-json', 
+}));
+
 
 app.listen(port, () => {
   console.log(

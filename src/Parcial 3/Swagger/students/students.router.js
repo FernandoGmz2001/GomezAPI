@@ -51,12 +51,6 @@ studentRouter.get("/alumnos/:id", async (req, res) => {
   res.json(result[0]);
 });
 
-studentRouter.use('/docs', redoc({ 
-  specUrl: '../swagger.json', 
-  routeName: '/docs', 
-  title: 'Documentación API Empleados',
-}));
-
 studentRouter.delete("/alumnos/:id", async (req, res) => {
   const { id } = req.params;
   const result = await deleteStudentById(id);
