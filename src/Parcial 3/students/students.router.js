@@ -24,7 +24,7 @@ const studentRouter = Router();
  */
 studentRouter.get("/alumnos", async (_, res) => {
   const result = await getAllStudents();
-  res.json(result[0]);
+  res.status(200).json(result[0]);
 });
 
 

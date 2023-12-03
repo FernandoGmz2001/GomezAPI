@@ -48,6 +48,7 @@ export async function updateStudent(req) {
   try {
     const { id } = req.params;
     const updateFields = req.body;
+    console.log(req)
     const sql = "UPDATE Alumno SET ? WHERE id_alumno = ?";
     const result = await promisePool.query(sql, [updateFields, id]);
     return result;
